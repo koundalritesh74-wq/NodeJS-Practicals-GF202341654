@@ -1,0 +1,43 @@
+// --------------- DDL Command ---------------
+use("companyDB"); // Switch to a new database
+
+// Drop the collection if it already exists (also a DDL operation)
+db.employees.drop(); 
+
+// Create a new collection
+db.createCollection("employees");
+
+
+// --------------- DML Command ---------------
+// Clear any existing documents
+db.employees.deleteMany({}); 
+
+// Insert new documents (data)
+db.employees.insertMany([
+  { firstName: "John", lastName: "Doe", department: "Engineering", salary: 75000 },
+  { firstName: "Jane", lastName: "Smith", department: "Marketing", salary: 68000 },
+  { firstName: "Mike", lastName: "Brown", department: "Engineering", salary: 80000 }
+]);
+
+// Update a document (give Jane a raise)
+db.employees.updateOne(
+  { firstName: "Jane", lastName: "Smith" },
+  { $set: { salary: 72000 } }
+);
+
+// Find (read) documents for a specific department
+db.employees.find({ department: "Engineering" });
+
+
+// --------------- DCL Command ---------------
+use("admin"); // Switch to the admin database to manage users
+
+// Drop the user if they already exist
+db.dropUser("financeAuditor"); 
+
+// Create a new user with read-only access to the companyDB
+db.createUser({
+  user: "financeAuditor",
+  pwd: "password456!",
+  roles: [{ role: "read", db: "companyDB" }]
+});
