@@ -1,0 +1,24 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/RaviThakur322/Node-JS-Practical-GF2023485999#readme",
+  "bugs": {
+    "url": "https://github.com/RaviThakur322/Node-JS-Practical-GF2023485999/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaviThakur322/Node-JS-Practical-GF2023485999.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {}
+}
