@@ -1,0 +1,8 @@
+{
+    "user": "Ravi",
+    "active": true,
+    "permissions": [
+      "read",
+      "write"
+    ]
+  }
